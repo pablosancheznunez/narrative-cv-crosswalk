@@ -2,19 +2,26 @@
 % Please edit documentation in R/connectors.R
 \name{nc_valid_orcid}
 \alias{nc_valid_orcid}
-\title{Check an ORCID iD}
+\alias{nc_orcid}
+\title{Validate and normalise an ORCID iD}
 \usage{
 nc_valid_orcid(id)
+
+nc_orcid(id)
 }
 \arguments{
-\item{id}{A bare ORCID iD such as `"0000-0002-1825-0097"`.}
+\item{id}{An ORCID iD, bare (\code{"0000-0002-1825-0097"}) or as a URL.}
 }
 \value{
-`TRUE` if the format and the ISO 7064 check digit are valid.
+\code{nc_valid_orcid()}: \code{TRUE} or \code{FALSE}. \code{nc_orcid()}: the bare iD.
 }
 \description{
-Check an ORCID iD
+\code{nc_valid_orcid()} checks the format and the ISO 7064 11,2 check digit.
+\code{nc_orcid()} also accepts the \verb{https://orcid.org/} form and returns the bare
+identifier, or fails with an informative error.
 }
 \examples{
 nc_valid_orcid("0000-0002-1825-0097")
+nc_valid_orcid("0000-0002-1825-0098")
+nc_orcid("https://orcid.org/0000-0002-1825-0097")
 }

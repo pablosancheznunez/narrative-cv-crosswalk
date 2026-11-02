@@ -11,7 +11,7 @@ pablosancheznunez/research-tools-ops). Follow these rules.
 
 ## What you may change on your own
 
-- Connector code in `src/connectors.js` and `r/R/connectors.R` when an API changed shape, plus the matching recorded responses in `tests/fixtures/` (copy them to `r/tests/testthat/fixtures/`).
+- Connector code in `src/connectors.js` and `r/R/connectors.R` when an API changed shape, plus the matching recorded responses in `tests/fixtures/` (copy them to `r/inst/extdata/examples/`).
 - Documentation, the web page layout and styles.
 
 ## What you must never change

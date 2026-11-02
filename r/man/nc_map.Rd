@@ -10,24 +10,51 @@ nc_map(
   consulted,
   crosswalk = nc_crosswalk(),
   orcid = NULL,
-  generated_at = format(Sys.time(), "\%Y-\%m-\%dT\%H:\%M:\%SZ", tz = "UTC")
+  generated_at = utc_now()
 )
 }
 \arguments{
-\item{framework}{A framework from [nc_framework()].}
+\item{framework}{A framework from \code{\link[=nc_framework]{nc_framework()}}.}
 
-\item{evidence, consulted}{As returned by [nc_collect()].}
+\item{evidence, consulted}{As returned by \code{\link[=nc_collect]{nc_collect()}} or
+\code{\link[=nc_example_evidence]{nc_example_evidence()}}.}
 
-\item{crosswalk}{Mappings from [nc_crosswalk()].}
+\item{crosswalk}{Mappings from \code{\link[=nc_crosswalk]{nc_crosswalk()}}.}
 
 \item{orcid}{The ORCID iD, recorded in the report.}
 
-\item{generated_at}{Timestamp recorded in the report.}
+\item{generated_at}{Timestamp recorded in the report (ISO 8601, UTC).}
 }
 \value{
-A report list with the same structure as the JSON report of the web
-  tool (schema `ncvc-report/1`).
+An object of class \code{ncvc_report}: a list with the structure of the
+JSON report of the web tool (schema \code{ncvc-report/1}). It has \code{print()},
+\code{summary()} and \code{as.data.frame()} methods.
 }
 \description{
-Map evidence onto a narrative CV framework
+Applies the crosswalk to evidence items and classifies every section of the
+framework:
+}
+\details{
+\itemize{
+\item \code{found}: evidence matched a mapping with full coverage;
+\item \code{partial}: evidence matched, but only through partial-coverage mappings;
+\item \code{not_found_in_sources}: nothing in the sources consulted. \strong{This does not
+mean the contribution does not exist};
+\item \code{source_unavailable}: every source the section relies on failed;
+\item \code{no_automated_source}: the section is narrative and no infrastructure can
+document it.
+}
+
+The function is pure: the same evidence always gives the same report, which
+makes assessments reproducible when the evidence is archived.
+}
+\examples{
+ex <- nc_example_evidence()
+report <- nc_map(nc_framework("r4ri"), ex$evidence, ex$consulted,
+                 orcid = "0000-0002-1825-0097")
+report
+summary(report)
+}
+\seealso{
+\code{\link[=narrative_cv]{narrative_cv()}} to collect and map in one call.
 }

@@ -22,7 +22,7 @@ test("the R package bundles exactly the same data, fixtures and expected reports
     ["data/mappings.json", "r/inst/extdata/mappings.json"],
     ["data/sources.json", "r/inst/extdata/sources.json"],
     ...frameworks.map((f) => [`data/frameworks/${f.id}.json`, `r/inst/extdata/frameworks/${f.id}.json`]),
-    ...["orcid", "openalex", "datacite", "openaire"].map((s) => [`tests/fixtures/${s}.json`, `r/tests/testthat/fixtures/${s}.json`]),
+    ...["orcid", "openalex", "datacite", "openaire"].map((s) => [`tests/fixtures/${s}.json`, `r/inst/extdata/examples/${s}.json`]),
     ...frameworks.map((f) => [`tests/regression/carberry-${f.id}.json`, `r/tests/testthat/fixtures/carberry-${f.id}.json`]),
   ];
   for (const [a, b] of same) assert.deepEqual(load(b), load(a), `${b} differs from ${a}; copy it over`);

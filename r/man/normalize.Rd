@@ -6,7 +6,7 @@
 \alias{nc_normalize_openalex}
 \alias{nc_normalize_datacite}
 \alias{nc_normalize_openaire}
-\title{Normalize recorded API responses}
+\title{Normalise API responses into evidence items}
 \usage{
 nc_normalize_orcid(json)
 
@@ -17,12 +17,19 @@ nc_normalize_datacite(json)
 nc_normalize_openaire(json)
 }
 \arguments{
-\item{json}{A parsed response.}
+\item{json}{A parsed response of the corresponding API.}
 }
 \value{
 A list of evidence items.
 }
 \description{
-Turn a parsed JSON response (`jsonlite::fromJSON(simplifyVector = FALSE)`)
-into evidence items.
+Turn a parsed JSON response (from \code{jsonlite::fromJSON(simplifyVector = FALSE)}) into a list of evidence items, each a list with \code{source},
+\code{record}, \code{type}, \code{title}, \code{year} and \code{url}. These functions do not use the
+network; \code{\link[=nc_collect]{nc_collect()}} calls them on live responses.
+}
+\examples{
+ex <- system.file("extdata", "examples", "orcid.json", package = "narrativecv")
+items <- nc_normalize_orcid(jsonlite::fromJSON(ex, simplifyVector = FALSE))
+length(items)
+items[[1]]
 }

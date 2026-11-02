@@ -1,0 +1,14 @@
+bibentry(
+  bibtype = "Manual",
+  title = "{narrativecv}: Map Narrative CV Sections to Evidence in Open Research Infrastructures",
+  author = person("Pablo", "Sánchez-Núñez", comment = c(ORCID = "0000-0001-7845-9506")),
+  year = "2026",
+  note = paste("R package version", meta$Version),
+  doi = "10.5281/zenodo.23881631",
+  url = "https://github.com/pablosancheznunez/narrative-cv-crosswalk",
+  textVersion = paste0(
+    "Sánchez-Núñez, P. (2026). narrativecv: Map Narrative CV Sections to Evidence ",
+    "in Open Research Infrastructures. R package version ", meta$Version,
+    ". https://doi.org/10.5281/zenodo.23881631"
+  )
+)

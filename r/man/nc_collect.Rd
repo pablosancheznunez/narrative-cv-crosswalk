@@ -4,17 +4,41 @@
 \alias{nc_collect}
 \title{Collect evidence for an ORCID iD}
 \usage{
-nc_collect(orcid, sources = names(fetchers))
+nc_collect(
+  orcid,
+  sources = nc_sources,
+  timeout = 30,
+  mailto = getOption("narrativecv.mailto")
+)
 }
 \arguments{
-\item{orcid}{A bare ORCID iD.}
+\item{orcid}{An ORCID iD (bare or as a URL).}
 
-\item{sources}{Which sources to query.}
+\item{sources}{Sources to query; any of \code{"orcid"}, \code{"openalex"},
+\code{"datacite"}, \code{"openaire"}.}
+
+\item{timeout}{Seconds before a request is abandoned.}
+
+\item{mailto}{Optional contact e-mail sent to OpenAlex, which gives access
+to its faster "polite pool". Defaults to the option \code{narrativecv.mailto}.}
 }
 \value{
-A list with `evidence` (items) and `consulted` (one entry per source).
+A list with \code{evidence} (evidence items, see \link{normalize}) and
+\code{consulted} (one entry per source with \code{ok}, \code{count}, \code{error} and
+\code{retrieved_at}).
 }
 \description{
-Queries ORCID, OpenAlex, DataCite and the OpenAIRE Graph. A source that
-fails is reported in `consulted`, never fatal.
+Queries the public APIs of ORCID, OpenAlex, DataCite and the OpenAIRE Graph.
+A source that fails or times out is reported in \code{consulted} with its error;
+it never stops the collection. Up to 1000 works are read from OpenAlex and
+OpenAIRE, and 1000 DOIs from DataCite.
+}
+\examples{
+\donttest{
+got <- nc_collect("0000-0002-1825-0097", sources = "orcid")
+got$consulted
+}
+}
+\seealso{
+\code{\link[=nc_map]{nc_map()}}, \code{\link[=narrative_cv]{narrative_cv()}}
 }

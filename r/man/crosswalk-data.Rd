@@ -5,6 +5,7 @@
 \alias{nc_crosswalk}
 \alias{nc_framework}
 \alias{nc_frameworks}
+\alias{nc_crosswalk_table}
 \title{Crosswalk data}
 \usage{
 nc_crosswalk()
@@ -12,15 +13,36 @@ nc_crosswalk()
 nc_framework(id = c("r4ri", "cva-aei"))
 
 nc_frameworks()
+
+nc_crosswalk_table(framework = NULL)
 }
 \arguments{
-\item{id}{Framework id: `"r4ri"` or `"cva-aei"`.}
+\item{id}{Framework id: \code{"r4ri"} (Royal Society Résumé for Researchers) or
+\code{"cva-aei"} (Spanish Currículum Vitae Abreviado of the Agencia Estatal de
+Investigación).}
+
+\item{framework}{Optional framework id to filter the table.}
 }
 \value{
-A list parsed from JSON.
+Parsed JSON (lists) or a data frame.
 }
 \description{
-The frameworks, mappings and source descriptions shipped with the package.
-They are identical to the files in the repository's `data/` folder (a test
-in the repository fails if they drift apart).
+The frameworks and mappings shipped with the package, identical to the
+files in the \verb{data/} folder of the project repository (a repository test
+fails if they drift apart).
+}
+\details{
+\itemize{
+\item \code{nc_crosswalk()} returns the mappings as parsed JSON.
+\item \code{nc_crosswalk_table()} returns them as a data frame, one row per mapping,
+convenient for analysis.
+\item \code{nc_framework()} returns a framework and its sections.
+}
+}
+\examples{
+cw <- nc_crosswalk()
+cw$mapping_version
+fw <- nc_framework("cva-aei")
+vapply(fw$sections, function(s) s$id, "")
+head(nc_crosswalk_table("r4ri")[, c("section", "source", "record", "coverage")])
 }

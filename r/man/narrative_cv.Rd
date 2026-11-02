@@ -2,24 +2,27 @@
 % Please edit documentation in R/engine.R
 \name{narrative_cv}
 \alias{narrative_cv}
-\title{Map an ORCID iD in one call}
+\title{Collect and map an ORCID iD in one call}
 \usage{
-narrative_cv(orcid, framework = c("r4ri", "cva-aei"))
+narrative_cv(orcid, framework = c("r4ri", "cva-aei"), ...)
 }
 \arguments{
-\item{orcid}{A bare ORCID iD.}
+\item{orcid}{An ORCID iD (bare or as a URL).}
 
-\item{framework}{`"r4ri"` or `"cva-aei"`.}
+\item{framework}{\code{"r4ri"} or \code{"cva-aei"}.}
+
+\item{...}{Passed to \code{\link[=nc_collect]{nc_collect()}}.}
 }
 \value{
-A report list; see [nc_map()].
+An \code{ncvc_report}; see \code{\link[=nc_map]{nc_map()}}.
 }
 \description{
-Map an ORCID iD in one call
+Collect and map an ORCID iD in one call
 }
 \examples{
-\dontrun{
+\donttest{
 report <- narrative_cv("0000-0002-1825-0097", "r4ri")
-head(nc_report_table(report))
+summary(report)
+head(as.data.frame(report))
 }
 }

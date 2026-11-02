@@ -1,0 +1,129 @@
+---
+title: "Mapping narrative CVs to evidence in open infrastructures"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Mapping narrative CVs to evidence in open infrastructures}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+## Why a crosswalk
+
+Responsible research assessment, as promoted by DORA and the Coalition for
+Advancing Research Assessment (CoARA), asks evaluators to look at the full
+range of a researcher's contributions. Narrative CVs serve that purpose: the
+Royal Society's *Résumé for Researchers* (R4RI) and the Spanish *Currículum
+Vitae Abreviado* (CVA) of the Agencia Estatal de Investigación ask for
+contributions to knowledge, to people, to the research community and to
+society.
+
+Some of those contributions leave traces in open infrastructures; many do
+not. The Narrative CV Crosswalk records, for every section of a framework,
+which records of ORCID, OpenAlex, DataCite and the OpenAIRE Graph can serve as
+evidence, of what type, with what coverage and with what limitations.
+narrativecv applies it to a researcher's ORCID iD.
+
+The crosswalk is a draft checked against the official AEI instructions for
+the CVA (2025 call) and the R4RI template (2019). It is pending review by
+research assessment experts.
+
+```{r}
+library(narrativecv)
+cw <- nc_crosswalk()
+cw$mapping_version
+table(nc_crosswalk_table()$framework, nc_crosswalk_table()$coverage)
+```
+
+## The frameworks
+
+```{r}
+fw <- nc_framework("cva-aei")
+data.frame(
+  section = vapply(fw$sections, function(s) s$id, ""),
+  narrative_only = vapply(fw$sections, function(s) s$no_automated_source, TRUE)
+)
+```
+
+Sections marked as narrative only, such as the free summary of the CVA, are
+never searched: no infrastructure can document them.
+
+## Evidence
+
+`narrative_cv()` queries the four public APIs and maps the result in one
+call. This vignette uses recorded responses for ORCID's public test record so
+that it runs without network access:
+
+```{r}
+ex <- nc_example_evidence()
+vapply(ex$consulted, function(c) paste(c$source, c$count), "")
+```
+
+Each evidence item has the same six fields whatever its source:
+
+```{r}
+str(ex$evidence[[2]])
+```
+
+## The report
+
+```{r}
+report <- nc_map(nc_framework("r4ri"), ex$evidence, ex$consulted,
+                 orcid = "0000-0002-1825-0097",
+                 generated_at = "2026-11-02T00:00:00Z")
+report
+```
+
+Every section gets one of five statuses:
+
+| Status | Meaning |
+|---|---|
+| `found` | Evidence matched a mapping with full coverage |
+| `partial` | Evidence matched, but every source involved has partial coverage |
+| `not_found_in_sources` | Nothing in the sources consulted |
+| `source_unavailable` | Every source the section relies on failed to answer |
+| `no_automated_source` | Narrative only |
+
+The evidence behind each section is available as a data frame, one row per
+item, with the evidence type and coverage of the mapping that found it:
+
+```{r}
+items <- as.data.frame(report)
+head(items[, c("section", "source", "type", "year")])
+table(items$section, items$source)
+```
+
+## Reading the results responsibly
+
+* **Not found does not mean it does not exist.** Infrastructures only hold
+  what has been registered and linked to the ORCID iD. Supervision, outreach,
+  policy work and many contributions in the humanities and in languages other
+  than English are rarely recorded.
+* **Self-declared is not verified.** ORCID entries added by the researcher are
+  marked `self-declared`; entries added by publishers, funders or data
+  repositories are closer to `direct` evidence.
+* **Coverage differs by source and discipline.** Every mapping states its
+  limitations; they are part of the result.
+* **No score.** The report lists evidence by section. Adding it up would
+  reward exactly the visibility biases that narrative CVs try to correct.
+
+## Reproducibility
+
+`nc_map()` is a pure function: the same evidence always gives the same
+report. To make an assessment reproducible, archive the evidence and the
+report with the crosswalk version:
+
+```{r}
+f <- tempfile(fileext = ".json")
+nc_write_json(report, f)
+jsonlite::fromJSON(f)$mapping_version
+unlink(f)
+```
+
+The package's engine is tested against the same recorded responses and
+expected reports as the JavaScript engine of the web tool at
+<https://pablosancheznunez.com/narrative-cv-crosswalk/>, so both give
+identical results.

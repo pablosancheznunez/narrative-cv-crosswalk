@@ -8,17 +8,40 @@ nc_matches <- function(mapping, e) {
 
 #' Map evidence onto a narrative CV framework
 #'
+#' Applies the crosswalk to evidence items and classifies every section of the
+#' framework:
+#'
+#' * `found`: evidence matched a mapping with full coverage;
+#' * `partial`: evidence matched, but only through partial-coverage mappings;
+#' * `not_found_in_sources`: nothing in the sources consulted. **This does not
+#'   mean the contribution does not exist**;
+#' * `source_unavailable`: every source the section relies on failed;
+#' * `no_automated_source`: the section is narrative and no infrastructure can
+#'   document it.
+#'
+#' The function is pure: the same evidence always gives the same report, which
+#' makes assessments reproducible when the evidence is archived.
+#'
 #' @param framework A framework from [nc_framework()].
-#' @param evidence,consulted As returned by [nc_collect()].
+#' @param evidence,consulted As returned by [nc_collect()] or
+#'   [nc_example_evidence()].
 #' @param crosswalk Mappings from [nc_crosswalk()].
 #' @param orcid The ORCID iD, recorded in the report.
-#' @param generated_at Timestamp recorded in the report.
-#' @return A report list with the same structure as the JSON report of the web
-#'   tool (schema `ncvc-report/1`).
+#' @param generated_at Timestamp recorded in the report (ISO 8601, UTC).
+#' @return An object of class `ncvc_report`: a list with the structure of the
+#'   JSON report of the web tool (schema `ncvc-report/1`). It has `print()`,
+#'   `summary()` and `as.data.frame()` methods.
+#' @seealso [narrative_cv()] to collect and map in one call.
 #' @export
+#' @examples
+#' ex <- nc_example_evidence()
+#' report <- nc_map(nc_framework("r4ri"), ex$evidence, ex$consulted,
+#'                  orcid = "0000-0002-1825-0097")
+#' report
+#' summary(report)
 nc_map <- function(framework, evidence, consulted, crosswalk = nc_crosswalk(),
-                   orcid = NULL,
-                   generated_at = format(Sys.time(), "%Y-%m-%dT%H:%M:%SZ", tz = "UTC")) {
+                   orcid = NULL, generated_at = utc_now()) {
+  if (!is.list(framework) || is.null(framework$sections)) stop("`framework` must come from nc_framework().", call. = FALSE)
   ok <- vapply(Filter(function(c) isTRUE(c$ok), consulted), function(c) c$source, "")
   sections <- lapply(framework$sections, function(section) {
     if (isTRUE(section$no_automated_source)) {
@@ -42,45 +65,49 @@ nc_map <- function(framework, evidence, consulted, crosswalk = nc_crosswalk(),
     }
     list(id = section$id, name = section$name, status = status, mappings = mappings)
   })
-  list(schema = "ncvc-report/1", framework = framework$id,
-       mapping_version = crosswalk$mapping_version, orcid = orcid,
-       generated_at = generated_at, sources_consulted = consulted, sections = sections)
+  report <- list(schema = "ncvc-report/1", framework = framework$id,
+                 mapping_version = crosswalk$mapping_version, orcid = orcid,
+                 generated_at = generated_at, sources_consulted = consulted, sections = sections)
+  structure(report, class = "ncvc_report", framework_name = framework$name)
 }
 
-#' Report as a data frame
+#' Collect and map an ORCID iD in one call
 #'
-#' One row per evidence item, the same columns as the web tool's CSV export.
-#'
-#' @param report A report from [nc_map()].
-#' @return A data frame.
-#' @export
-nc_report_table <- function(report) {
-  rows <- list()
-  na <- function(x) if (is.null(x)) NA else x
-  for (s in report$sections) for (m in s$mappings) for (e in m$items) {
-    rows[[length(rows) + 1]] <- data.frame(
-      section = s$id, section_status = s$status, mapping = m$id,
-      evidence_type = m$evidence_type, coverage = m$coverage, source = e$source,
-      record = e$record, type = na(e$type), title = na(e$title), year = na(e$year),
-      url = na(e$url), stringsAsFactors = FALSE)
-  }
-  if (!length(rows)) return(data.frame())
-  do.call(rbind, rows)
-}
-
-#' Map an ORCID iD in one call
-#'
-#' @param orcid A bare ORCID iD.
+#' @param orcid An ORCID iD (bare or as a URL).
 #' @param framework `"r4ri"` or `"cva-aei"`.
-#' @return A report list; see [nc_map()].
+#' @param ... Passed to [nc_collect()].
+#' @return An `ncvc_report`; see [nc_map()].
 #' @export
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' report <- narrative_cv("0000-0002-1825-0097", "r4ri")
-#' head(nc_report_table(report))
+#' summary(report)
+#' head(as.data.frame(report))
 #' }
-narrative_cv <- function(orcid, framework = c("r4ri", "cva-aei")) {
+narrative_cv <- function(orcid, framework = c("r4ri", "cva-aei"), ...) {
   fw <- nc_framework(match.arg(framework))
-  got <- nc_collect(orcid)
+  orcid <- nc_orcid(orcid)
+  got <- nc_collect(orcid, ...)
   nc_map(fw, got$evidence, got$consulted, orcid = orcid)
+}
+
+#' Write a report as JSON
+#'
+#' Writes the report in the same format as the web tool's download, so that
+#' assessments can be archived and compared.
+#'
+#' @param report An `ncvc_report`.
+#' @param path File path.
+#' @return `path`, invisibly.
+#' @export
+#' @examples
+#' ex <- nc_example_evidence()
+#' report <- nc_map(nc_framework("cva-aei"), ex$evidence, ex$consulted)
+#' f <- tempfile(fileext = ".json")
+#' nc_write_json(report, f)
+#' unlink(f)
+nc_write_json <- function(report, path) {
+  jsonlite::write_json(unclass(report), path, auto_unbox = TRUE, null = "null",
+                       na = "null", digits = NA, pretty = TRUE)
+  invisible(path)
 }

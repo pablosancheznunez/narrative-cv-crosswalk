@@ -3,21 +3,33 @@ Title: Map Narrative CV Sections to Evidence in Open Research Infrastructures
 Version: 0.1.0
 Authors@R:
     person("Pablo", "Sánchez-Núñez", email = "psancheznunez@outlook.com",
-           role = c("aut", "cre"), comment = c(ORCID = "0000-0001-7845-9506"))
-Description: Applies the Narrative CV Crosswalk, an open and versioned mapping
-    between narrative CV frameworks (Résumé for Researchers, the Spanish CVA)
-    and the records held by ORCID, OpenAlex, DataCite and the OpenAIRE Graph.
-    Given an ORCID iD it reports, section by section, the evidence found, its
-    coverage and its limitations, and which sections only the researcher's
-    narrative can document.
+           role = c("aut", "cre", "cph"), comment = c(ORCID = "0000-0001-7845-9506"))
+Description: Applies an open, versioned crosswalk between narrative curriculum
+    vitae frameworks (the Royal Society 'Résumé for Researchers' and the
+    Spanish 'Currículum Vitae Abreviado' of the Agencia Estatal de
+    Investigación) and the records held by 'ORCID', 'OpenAlex', 'DataCite' and
+    the 'OpenAIRE' Graph. Given an 'ORCID' identifier it reports, section by
+    section, the evidence found, its type, coverage and limitations, and which
+    sections only the researcher's narrative can document, in support of
+    responsible research assessment. The crosswalk is described in
+    Sánchez-Núñez (2026) <doi:10.5281/zenodo.23881631>.
 License: MIT + file LICENSE
-URL: https://github.com/pablosancheznunez/narrative-cv-crosswalk
+URL: https://pablosancheznunez.com/narrative-cv-crosswalk/,
+    https://github.com/pablosancheznunez/narrative-cv-crosswalk
 BugReports: https://github.com/pablosancheznunez/narrative-cv-crosswalk/issues
-Encoding: UTF-8
+Depends:
+    R (>= 4.1.0)
 Imports:
     curl,
-    jsonlite
+    jsonlite,
+    utils
 Suggests:
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0)
+VignetteBuilder: knitr
 Config/testthat/edition: 3
+Encoding: UTF-8
+Language: en-GB
+Roxygen: list(markdown = TRUE)
 Config/roxygen2/version: 8.1.1
