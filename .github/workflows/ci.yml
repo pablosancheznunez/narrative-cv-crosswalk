@@ -4,6 +4,9 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+  schedule:
+    # Weekly check against the newest R packages.
+    - cron: "0 6 * * 1"
 
 permissions:
   contents: read
