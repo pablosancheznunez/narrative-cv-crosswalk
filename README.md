@@ -1,5 +1,7 @@
 # Narrative CV Crosswalk
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23881631.svg)](https://doi.org/10.5281/zenodo.23881631)
+
 An open, versioned mapping between the sections of narrative CVs and the evidence that open research infrastructures hold about a researcher.
 
 **Use it in the browser:** <https://pablosancheznunez.com/narrative-cv-crosswalk/>. Enter an ORCID iD; the page queries ORCID, OpenAlex, DataCite and the OpenAIRE Graph directly from your browser and shows, section by section, what each source can document.

@@ -11,6 +11,14 @@ authors:
 url: "https://pablosancheznunez.com/narrative-cv-crosswalk/"
 repository-code: "https://github.com/pablosancheznunez/narrative-cv-crosswalk"
 license: MIT
+doi: 10.5281/zenodo.23881631
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23881631
+    description: "Concept DOI: all versions, resolves to the latest"
+  - type: doi
+    value: 10.5281/zenodo.23881632
+    description: "First release"
 keywords:
   - narrative CV
   - responsible research assessment
