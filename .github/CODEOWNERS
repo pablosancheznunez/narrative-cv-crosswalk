@@ -1,5 +1,4 @@
-# High-risk paths need the owner's approval (see .maintenance.json).
-/r/inst/extdata/mappings.json @pablosancheznunez
+# Paths whose changes need the maintainer's review.
 /r/inst/extdata/sources.json @pablosancheznunez
 /r/inst/extdata/frameworks/ @pablosancheznunez
 /schema/ @pablosancheznunez
@@ -7,5 +6,3 @@
 /src/engine.js @pablosancheznunez
 /r/R/engine.R @pablosancheznunez
 /.github/ @pablosancheznunez
-/.maintenance.json @pablosancheznunez
-/CONTRIBUTING.md @pablosancheznunez
