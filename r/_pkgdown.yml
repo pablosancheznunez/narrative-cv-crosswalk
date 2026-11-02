@@ -1,0 +1,52 @@
+url: https://pablosancheznunez.com/narrative-cv-crosswalk/r/
+
+template:
+  bootstrap: 5
+  bslib:
+    primary: "#24476b"
+  opengraph:
+    image:
+      src: man/figures/card.png
+      alt: "narrativecv: map narrative CV sections to evidence in open research infrastructures"
+
+authors:
+  Pablo Sánchez-Núñez:
+    href: https://pablosancheznunez.com
+
+home:
+  title: "narrativecv: narrative CV evidence in open infrastructures"
+  links:
+  - text: Web tool (no installation)
+    href: https://pablosancheznunez.com/narrative-cv-crosswalk/
+  - text: Crosswalk data (JSON, CC BY 4.0)
+    href: https://pablosancheznunez.com/narrative-cv-crosswalk/data/mappings.json
+  - text: Author website
+    href: https://pablosancheznunez.com
+
+navbar:
+  structure:
+    left: [intro, reference, news]
+    right: [search, github]
+
+reference:
+- title: Start here
+  desc: Collect and map evidence for an ORCID iD in one call.
+  contents:
+  - narrative_cv
+  - nc_example_evidence
+- title: Reports
+  desc: Inspect, tabulate and archive the result.
+  contents:
+  - ncvc_report
+  - nc_write_json
+- title: Step by step
+  desc: Query the sources and apply the crosswalk separately, for reproducible pipelines.
+  contents:
+  - nc_collect
+  - nc_map
+  - normalize
+- title: The crosswalk
+  desc: Frameworks, mappings and identifiers.
+  contents:
+  - crosswalk-data
+  - nc_valid_orcid

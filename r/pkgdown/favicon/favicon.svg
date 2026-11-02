@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 278" width="240" height="278" role="img" aria-label="narrativecv logo">
+  <polygon points="120,4 236,71 236,207 120,274 4,207 4,71" fill="#24476b" stroke="#1a3550" stroke-width="6"/>
+  <rect x="44" y="74" width="72" height="96" rx="7" fill="#ffffff" opacity=".95"/>
+  <rect x="54" y="86" width="40" height="8" rx="3" fill="#24476b"/>
+  <rect x="54" y="104" width="52" height="5" rx="2.5" fill="#a9bdd1"/>
+  <rect x="54" y="116" width="44" height="5" rx="2.5" fill="#a9bdd1"/>
+  <rect x="54" y="132" width="52" height="5" rx="2.5" fill="#a9bdd1"/>
+  <rect x="54" y="144" width="36" height="5" rx="2.5" fill="#a9bdd1"/>
+  <g stroke="#e3a33b" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M118 106 C 140 106, 146 94, 168 94"/>
+    <path d="M118 134 C 140 134, 146 122, 168 122"/>
+    <path d="M118 134 C 140 134, 146 150, 168 150"/>
+  </g>
+  <circle cx="176" cy="94" r="9" fill="#ffffff"/>
+  <circle cx="176" cy="122" r="9" fill="#ffffff"/>
+  <circle cx="176" cy="150" r="9" fill="#ffffff" opacity=".55"/>
+  <text x="120" y="220" text-anchor="middle" font-family="Georgia, serif" font-size="31" fill="#ffffff">narrativecv</text>
+</svg>

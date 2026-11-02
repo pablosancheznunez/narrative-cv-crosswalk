@@ -14,7 +14,8 @@ Description: Applies an open, versioned crosswalk between narrative curriculum
     responsible research assessment. The crosswalk is described in
     Sánchez-Núñez (2026) <doi:10.5281/zenodo.23881631>.
 License: MIT + file LICENSE
-URL: https://pablosancheznunez.com/narrative-cv-crosswalk/,
+URL: https://pablosancheznunez.com/narrative-cv-crosswalk/r/,
+    https://pablosancheznunez.com/narrative-cv-crosswalk/,
     https://github.com/pablosancheznunez/narrative-cv-crosswalk
 BugReports: https://github.com/pablosancheznunez/narrative-cv-crosswalk/issues
 Depends:

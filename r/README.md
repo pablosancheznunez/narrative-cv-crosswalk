@@ -1,5 +1,6 @@
-# narrativecv
+# narrativecv <img src="man/figures/logo.png" align="right" height="139" alt="narrativecv logo" />
 
+[![R-CMD-check](https://github.com/pablosancheznunez/narrative-cv-crosswalk/actions/workflows/ci.yml/badge.svg)](https://github.com/pablosancheznunez/narrative-cv-crosswalk/actions/workflows/ci.yml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23881631.svg)](https://doi.org/10.5281/zenodo.23881631)
 
 Map narrative CV sections (Royal Society *Résumé for Researchers*, Spanish *CVA*
