@@ -39,7 +39,8 @@ jobs:
         run: |
           cp -r index.html _site/
           cp -r src _site/
-          cp -r data _site/
+          mkdir -p _site/data
+          cp -r r/inst/extdata/mappings.json r/inst/extdata/sources.json r/inst/extdata/frameworks _site/data/
           cp -r schema _site/
           cp -r .nojekyll _site/
           cp -r assets _site/

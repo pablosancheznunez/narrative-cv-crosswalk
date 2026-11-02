@@ -1,7 +1,9 @@
 # High-risk paths need the owner's approval (see .maintenance.json).
-/data/ @pablosancheznunez
+/r/inst/extdata/mappings.json @pablosancheznunez
+/r/inst/extdata/sources.json @pablosancheznunez
+/r/inst/extdata/frameworks/ @pablosancheznunez
 /schema/ @pablosancheznunez
-/tests/regression/ @pablosancheznunez
+/r/tests/testthat/fixtures/ @pablosancheznunez
 /src/engine.js @pablosancheznunez
 /r/R/engine.R @pablosancheznunez
 /.github/ @pablosancheznunez

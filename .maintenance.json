@@ -1,6 +1,6 @@
 {
   "risk_paths": {
-    "high": ["data/**", "schema/**", "tests/regression/**", "src/engine.js", "r/R/engine.R"],
+    "high": ["r/inst/extdata/mappings.json", "r/inst/extdata/sources.json", "r/inst/extdata/frameworks/**", "schema/**", "r/tests/testthat/fixtures/**", "src/engine.js", "r/R/engine.R"],
     "low": ["README.md", "docs/**", "index.html", "src/style.css", "r/README.md", "r/man/**"]
   },
   "release": { "version_files": ["CITATION.cff", "r/DESCRIPTION"] }

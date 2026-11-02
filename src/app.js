@@ -10,7 +10,12 @@ const STATUS_LABEL = {
   no_automated_source: "Narrative only",
 };
 
-const getJson = async (path) => (await fetch(path)).json();
+const getJson = async (path) => {
+  // Published under /data/; in a checkout the single source lives in the R package.
+  let res = await fetch(path);
+  if (!res.ok) res = await fetch(path.replace(/^data\//, "r/inst/extdata/"));
+  return res.json();
+};
 const [crosswalk, frameworks] = await Promise.all([
   getJson("data/mappings.json"),
   Promise.all(["r4ri", "cva-aei"].map((id) => getJson(`data/frameworks/${id}.json`))),

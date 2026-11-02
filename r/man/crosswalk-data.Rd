@@ -27,9 +27,9 @@ Investigación).}
 Parsed JSON (lists) or a data frame.
 }
 \description{
-The frameworks and mappings shipped with the package, identical to the
-files in the \verb{data/} folder of the project repository (a repository test
-fails if they drift apart).
+The frameworks and mappings shipped with the package. They are the single
+source of the crosswalk, also published as JSON at
+\url{https://pablosancheznunez.com/narrative-cv-crosswalk/data/mappings.json}.
 }
 \details{
 \itemize{

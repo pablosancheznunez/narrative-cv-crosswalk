@@ -12,13 +12,13 @@ Narrative CVs (such as the Royal Society's *Résumé for Researchers* or the Spa
 
 | Path | What it is |
 | --- | --- |
-| [`data/mappings.json`](data/mappings.json) | The crosswalk: one entry per framework section × source record, with evidence type, coverage and limitations |
-| [`data/frameworks/`](data/frameworks/) | The narrative CV frameworks and their sections |
+| [`mappings.json`](r/inst/extdata/mappings.json) | The crosswalk: one entry per framework section × source record, with evidence type, coverage and limitations |
+| [`frameworks/`](r/inst/extdata/frameworks/) | The narrative CV frameworks and their sections |
 | [`schema/`](schema/) | JSON Schemas for the data |
 | [`src/`](src/) | The engine and connectors (plain JavaScript, no dependencies), used by the web page and the tests |
 | [`r/`](r/) | The `narrativecv` R package |
 
-The JSON files are the product. Use them from any language without installing anything:
+The JSON files are the product. There is a single copy, inside the R package (`r/inst/extdata/`), published at stable URLs for any language:
 
 ```r
 crosswalk <- jsonlite::fromJSON("https://pablosancheznunez.com/narrative-cv-crosswalk/data/mappings.json")
@@ -65,4 +65,4 @@ python tests/validate_schema.py      # needs: pip install jsonschema
 
 ## Citation and license
 
-See [`CITATION.cff`](CITATION.cff). Code: MIT. Data (`data/`, `schema/`): CC BY 4.0.
+See [`CITATION.cff`](CITATION.cff). Code: MIT. Data (`r/inst/extdata/`, `schema/`): CC BY 4.0.

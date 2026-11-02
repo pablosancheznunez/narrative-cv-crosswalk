@@ -17,7 +17,7 @@ const normalizers = { orcid: normalizeOrcid, openalex: normalizeOpenalex, dataci
 
 for (const [name, normalize] of Object.entries(normalizers)) {
   test(`${name}: recorded response normalizes to evidence items`, () => {
-    const items = normalize(load(`tests/fixtures/${name}.json`));
+    const items = normalize(load(`r/inst/extdata/examples/${name}.json`));
     assert.ok(items.length > 0);
     for (const it of items) {
       assert.deepEqual(Object.keys(it).sort(), KEYS);
@@ -28,7 +28,7 @@ for (const [name, normalize] of Object.entries(normalizers)) {
 }
 
 test("ORCID record yields person, works, employments and peer reviews", () => {
-  const items = normalizeOrcid(load("tests/fixtures/orcid.json"));
+  const items = normalizeOrcid(load("r/inst/extdata/examples/orcid.json"));
   const count = (r) => items.filter((i) => i.record === r).length;
   assert.equal(count("person"), 1);
   assert.equal(items.find((i) => i.record === "person").title, "Josiah Carberry");
@@ -41,7 +41,7 @@ test("a failing source is reported, not fatal", async () => {
   const fetchFn = async (url) => {
     if (url.includes("openalex")) return { ok: false, status: 503, statusText: "Unavailable" };
     const name = ["orcid", "datacite", "openaire"].find((n) => url.includes(n));
-    return { ok: true, json: async () => load(`tests/fixtures/${name}.json`) };
+    return { ok: true, json: async () => load(`r/inst/extdata/examples/${name}.json`) };
   };
   const { evidence, consulted } = await collectEvidence("0000-0002-1825-0097", { fetchFn, now: () => "t" });
   const ox = consulted.find((c) => c.source === "openalex");

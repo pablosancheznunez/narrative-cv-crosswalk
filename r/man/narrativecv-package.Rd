@@ -22,6 +22,7 @@ See \code{vignette("narrativecv")} for the method and its limits.
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://pablosancheznunez.com/narrative-cv-crosswalk/r/}
   \item \url{https://pablosancheznunez.com/narrative-cv-crosswalk/}
   \item \url{https://github.com/pablosancheznunez/narrative-cv-crosswalk}
   \item Report bugs at \url{https://github.com/pablosancheznunez/narrative-cv-crosswalk/issues}

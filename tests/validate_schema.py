@@ -9,8 +9,8 @@ from jsonschema import Draft202012Validator, FormatChecker
 root = Path(__file__).resolve().parents[1]
 load = lambda p: json.loads((root / p).read_text(encoding="utf-8"))
 
-checks = [("schema/mappings.schema.json", "data/mappings.json")]
-checks += [("schema/framework.schema.json", str(p.relative_to(root))) for p in sorted((root / "data/frameworks").glob("*.json"))]
+checks = [("schema/mappings.schema.json", "r/inst/extdata/mappings.json")]
+checks += [("schema/framework.schema.json", str(p.relative_to(root))) for p in sorted((root / "r/inst/extdata/frameworks").glob("*.json"))]
 
 failed = False
 for schema_path, data_path in checks:

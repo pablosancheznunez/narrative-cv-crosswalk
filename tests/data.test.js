@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { crosswalk, frameworks, load, sources } from "./helpers.js";
+import { crosswalk, frameworks, sources } from "./helpers.js";
 
 test("mapping ids are unique", () => {
   const ids = crosswalk.mappings.map((m) => m.id);
@@ -15,17 +15,6 @@ test("every mapping points to an existing framework section and source record", 
     assert.ok(sources[m.source]?.records.includes(m.record), `${m.id}: unknown record ${m.source}/${m.record}`);
     assert.ok(m.id.startsWith(`${m.framework}.${m.section}.${m.source}.`), `${m.id}: id must start with framework.section.source`);
   }
-});
-
-test("the R package bundles exactly the same data, fixtures and expected reports", () => {
-  const same = [
-    ["data/mappings.json", "r/inst/extdata/mappings.json"],
-    ["data/sources.json", "r/inst/extdata/sources.json"],
-    ...frameworks.map((f) => [`data/frameworks/${f.id}.json`, `r/inst/extdata/frameworks/${f.id}.json`]),
-    ...["orcid", "openalex", "datacite", "openaire"].map((s) => [`tests/fixtures/${s}.json`, `r/inst/extdata/examples/${s}.json`]),
-    ...frameworks.map((f) => [`tests/regression/carberry-${f.id}.json`, `r/tests/testthat/fixtures/carberry-${f.id}.json`]),
-  ];
-  for (const [a, b] of same) assert.deepEqual(load(b), load(a), `${b} differs from ${a}; copy it over`);
 });
 
 test("every section has a mapping or is explicitly narrative", () => {

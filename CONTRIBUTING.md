@@ -17,12 +17,12 @@ The R package must behave exactly like `src/*.js`: both are tested against the s
 
 ## Changes that may be made without the maintainer's review
 
-- Connector code in `src/connectors.js` and `r/R/connectors.R` when an API changes shape, together with the matching recorded responses in `tests/fixtures/` (copied to `r/inst/extdata/examples/`).
+- Connector code in `src/connectors.js` and `r/R/connectors.R` when an API changes shape, together with the matching recorded responses in `r/inst/extdata/examples/`.
 - Documentation, the web page layout and styles.
 
 ## Changes that always need the maintainer's review
 
-- `data/`, `schema/`, `src/engine.js`, `r/R/engine.R` and `tests/regression/`, which define the crosswalk and its expected results.
+- `r/inst/extdata/` (frameworks and mappings), `schema/`, `src/engine.js`, `r/R/engine.R` and `r/tests/testthat/fixtures/` (expected reports), which define the crosswalk and its results.
 - Workflows, `.maintenance.json`, `CODEOWNERS` and this file.
 
 Tests are never weakened or deleted to make them pass.

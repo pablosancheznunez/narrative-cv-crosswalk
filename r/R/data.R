@@ -5,9 +5,9 @@ read_extdata <- function(...) {
 
 #' Crosswalk data
 #'
-#' The frameworks and mappings shipped with the package, identical to the
-#' files in the `data/` folder of the project repository (a repository test
-#' fails if they drift apart).
+#' The frameworks and mappings shipped with the package. They are the single
+#' source of the crosswalk, also published as JSON at
+#' <https://pablosancheznunez.com/narrative-cv-crosswalk/data/mappings.json>.
 #'
 #' * `nc_crosswalk()` returns the mappings as parsed JSON.
 #' * `nc_crosswalk_table()` returns them as a data frame, one row per mapping,
