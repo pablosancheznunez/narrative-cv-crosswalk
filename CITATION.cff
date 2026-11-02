@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use the Narrative CV Crosswalk, please cite it as below."
+type: software
+title: "Narrative CV Crosswalk: mapping narrative CV sections to evidence in open research infrastructures"
+version: 0.1.0
+date-released: 2026-11-02
+authors:
+  - family-names: "Sánchez-Núñez"
+    given-names: "Pablo"
+    orcid: "https://orcid.org/0000-0001-7845-9506"
+url: "https://pablosancheznunez.github.io/narrative-cv-crosswalk/"
+repository-code: "https://github.com/pablosancheznunez/narrative-cv-crosswalk"
+license: MIT
+keywords:
+  - narrative CV
+  - responsible research assessment
+  - CoARA
+  - ORCID
+  - OpenAIRE
+  - OpenAlex
+  - DataCite
+  - crosswalk
+abstract: >-
+  An open, versioned crosswalk between the sections of narrative CV frameworks
+  (Résumé for Researchers, the Spanish CVA) and the records held by ORCID,
+  OpenAlex, DataCite and the OpenAIRE Graph, with the evidence type, coverage
+  and limitations of each source. Includes JSON Schemas, a dependency-free
+  JavaScript engine and web tool, and the narrativecv R package.

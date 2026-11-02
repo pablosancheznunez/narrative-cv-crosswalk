@@ -1,0 +1,70 @@
+{
+ "results": [
+  {
+   "id": "https://openalex.org/W2508646516",
+   "doi": "https://doi.org/10.1177/0269216316665562",
+   "title": "‘Dignity therapy’, a promising intervention in palliative care: A comprehensive systematic literature review",
+   "type": "review",
+   "publication_year": 2016,
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "hybrid",
+    "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/0269216316665562",
+    "any_repository_has_fulltext": true
+   }
+  },
+  {
+   "id": "https://openalex.org/W2155292125",
+   "doi": "https://doi.org/10.1161/01.hyp.0000143483.66701.ec",
+   "title": "Endothelial NO Synthase Genotype and Risk of Preeclampsia",
+   "type": "article",
+   "publication_year": 2004,
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   }
+  },
+  {
+   "id": "https://openalex.org/W2470898565",
+   "doi": "https://doi.org/10.1590/1809-4422asoc121132v1922016",
+   "title": "ALTERNATIVE FOOD NETWORKS AND NEW PRODUCER-CONSUMER RELATIONS IN FRANCE AND IN BRAZIL",
+   "type": "article",
+   "publication_year": 2016,
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "diamond",
+    "oa_url": "http://www.scielo.br/pdf/asoc/v19n2/1809-4422-asoc-19-02-00001.pdf",
+    "any_repository_has_fulltext": true
+   }
+  },
+  {
+   "id": "https://openalex.org/W2901858332",
+   "doi": null,
+   "title": "Manajemen dan Riset Sumber Daya Manusia",
+   "type": "article",
+   "publication_year": 2018,
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   }
+  },
+  {
+   "id": "https://openalex.org/W4319602423",
+   "doi": "https://doi.org/10.21927/ijeeti.2023.2(1).20-31",
+   "title": "Definisi Dan Teori Pendekatan, Strategi, Dan Metode Pembelajaran",
+   "type": "article",
+   "publication_year": 2023,
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "bronze",
+    "oa_url": "https://ejournal.almaata.ac.id/index.php/IJEETI/article/download/2621/1765",
+    "any_repository_has_fulltext": false
+   }
+  }
+ ],
+ "group_by": []
+}

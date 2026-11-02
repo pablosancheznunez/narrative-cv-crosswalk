@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pablosancheznunez.github.io/narrative-cv-crosswalk/schema/mappings.schema.json",
+  "title": "Narrative CV Crosswalk mappings",
+  "type": "object",
+  "required": ["mapping_version", "valid_from", "mappings"],
+  "properties": {
+    "mapping_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "valid_from": { "type": "string", "format": "date" },
+    "status": { "type": "string" },
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "framework", "section", "contribution_type", "source", "record", "evidence_type", "coverage", "limitations"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+(\\.[a-z0-9-]+)+$" },
+          "framework": { "type": "string" },
+          "section": { "type": "string" },
+          "contribution_type": { "type": "string" },
+          "source": { "enum": ["orcid", "openalex", "datacite", "openaire"] },
+          "record": { "type": "string" },
+          "types": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "evidence_type": { "enum": ["direct", "indirect", "self-declared"] },
+          "coverage": { "enum": ["full", "partial", "none"] },
+          "limitations": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

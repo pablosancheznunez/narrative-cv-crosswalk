@@ -1,0 +1,10 @@
+{
+  "name": "narrative-cv-crosswalk",
+  "private": true,
+  "type": "module",
+  "description": "No dependencies. Tests use Node's built-in runner.",
+  "scripts": {
+    "test": "node --test tests/",
+    "test:live": "node --test tests/live/contract.js"
+  }
+}

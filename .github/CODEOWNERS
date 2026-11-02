@@ -1,0 +1,9 @@
+# High-risk paths need the owner's approval (see .maintenance.json).
+/data/ @pablosancheznunez
+/schema/ @pablosancheznunez
+/tests/regression/ @pablosancheznunez
+/src/engine.js @pablosancheznunez
+/r/R/engine.R @pablosancheznunez
+/.github/ @pablosancheznunez
+/.maintenance.json @pablosancheznunez
+/CLAUDE.md @pablosancheznunez

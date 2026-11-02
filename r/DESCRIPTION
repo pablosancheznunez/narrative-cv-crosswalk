@@ -1,0 +1,23 @@
+Package: narrativecv
+Title: Map Narrative CV Sections to Evidence in Open Research Infrastructures
+Version: 0.1.0
+Authors@R:
+    person("Pablo", "Sánchez-Núñez", email = "psancheznunez@outlook.com",
+           role = c("aut", "cre"), comment = c(ORCID = "0000-0001-7845-9506"))
+Description: Applies the Narrative CV Crosswalk, an open and versioned mapping
+    between narrative CV frameworks (Résumé for Researchers, the Spanish CVA)
+    and the records held by ORCID, OpenAlex, DataCite and the OpenAIRE Graph.
+    Given an ORCID iD it reports, section by section, the evidence found, its
+    coverage and its limitations, and which sections only the researcher's
+    narrative can document.
+License: MIT + file LICENSE
+URL: https://github.com/pablosancheznunez/narrative-cv-crosswalk
+BugReports: https://github.com/pablosancheznunez/narrative-cv-crosswalk/issues
+Encoding: UTF-8
+Imports:
+    curl,
+    jsonlite
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.1.1

@@ -1,0 +1,15 @@
+{
+  "id": "cva-aei",
+  "name": "Currículum Vitae Abreviado (CVA), Agencia Estatal de Investigación",
+  "publisher": "Agencia Estatal de Investigación (Spain)",
+  "reference": "https://www.aei.gob.es/",
+  "status": "draft",
+  "sections": [
+    { "id": "a-personal", "name": "Parte A. Datos personales", "name_en": "Part A. Personal details", "no_automated_source": false },
+    { "id": "b-summary", "name": "Parte B. Resumen libre del currículum", "name_en": "Part B. Free summary of the CV", "no_automated_source": true },
+    { "id": "c1-publications", "name": "C.1 Publicaciones", "name_en": "C.1 Publications", "no_automated_source": false },
+    { "id": "c2-conferences", "name": "C.2 Congresos", "name_en": "C.2 Conferences", "no_automated_source": false },
+    { "id": "c3-projects", "name": "C.3 Proyectos y contratos", "name_en": "C.3 Projects and contracts", "no_automated_source": false },
+    { "id": "c4-transfer", "name": "C.4 Actividades de transferencia", "name_en": "C.4 Knowledge transfer activities", "no_automated_source": false }
+  ]
+}

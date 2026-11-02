@@ -1,0 +1,130 @@
+{
+ "data": [
+  {
+   "id": "10.17026/dans-xxt-v8cc",
+   "type": "dois",
+   "attributes": {
+    "doi": "10.17026/dans-xxt-v8cc",
+    "titles": [
+     {
+      "title": "Opgraving - variant archeologische begeleiding leidingverleggingen Zernike-terrein, Groningen"
+     },
+     {
+      "titleType": "AlternativeTitle",
+      "title": "Antea Group Archeologie 2019/16"
+     }
+    ],
+    "publicationYear": 2020,
+    "types": {
+     "schemaOrg": "Dataset",
+     "resourceTypeGeneral": "Dataset",
+     "citeproc": "dataset",
+     "bibtex": "misc",
+     "ris": "DATA"
+    },
+    "url": "https://archaeology.datastations.nl/citation?persistentId=doi:10.17026/DANS-XXT-V8CC"
+   }
+  },
+  {
+   "id": "10.71624/zkep7v67",
+   "type": "dois",
+   "attributes": {
+    "doi": "10.71624/zkep7v67",
+    "titles": [
+     {
+      "titleType": null,
+      "lang": null,
+      "title": "Exploration of roles and barriers of husband involvement in family planning among married couples in Afar pastoral communities of Ethiopia"
+     }
+    ],
+    "publicationYear": 2020,
+    "types": {
+     "schemaOrg": "ScholarlyArticle",
+     "resourceTypeGeneral": "JournalArticle",
+     "citeproc": "article-journal",
+     "bibtex": "article",
+     "ris": "JOUR"
+    },
+    "url": "https://journal.mu.edu.et/index.php/eajhs/article/view/339"
+   }
+  },
+  {
+   "id": "10.71624/brgtfa55",
+   "type": "dois",
+   "attributes": {
+    "doi": "10.71624/brgtfa55",
+    "titles": [
+     {
+      "titleType": null,
+      "lang": null,
+      "title": "Identification and Prevalence of Ectoparasites in backyard chicken populations, and Associated Risk Factors in Gulomekeda Wereda, Eastern Tigray, Ethiopia"
+     }
+    ],
+    "publicationYear": 2023,
+    "types": {
+     "schemaOrg": "ScholarlyArticle",
+     "resourceTypeGeneral": "JournalArticle",
+     "citeproc": "article-journal",
+     "bibtex": "article",
+     "ris": "JOUR"
+    },
+    "url": "https://journal.mu.edu.et/index.php/ejvsap/article/view/793"
+   }
+  },
+  {
+   "id": "10.34635/rpc.1127",
+   "type": "dois",
+   "attributes": {
+    "doi": "10.34635/rpc.1127",
+    "titles": [
+     {
+      "title": "Gastric Schwannoma: A Case Report of a Rare Differential Diagnosis to Consider in Gastric Tumours"
+     },
+     {
+      "titleType": "TranslatedTitle",
+      "title": "Schwannoma Gástrico: Relato de Caso de um Diagnóstico Diferencial Raro a ser Considerado em Tumores Gástricos"
+     }
+    ],
+    "publicationYear": 2026,
+    "types": {
+     "schemaOrg": "ScholarlyArticle",
+     "resourceTypeGeneral": "JournalArticle",
+     "citeproc": "article-journal",
+     "bibtex": "article",
+     "ris": "JOUR"
+    },
+    "url": "https://revista.spcir.com/index.php/spcir/article/view/1127"
+   }
+  },
+  {
+   "id": "10.60568/eic.v8i1.3882",
+   "type": "dois",
+   "attributes": {
+    "doi": "10.60568/eic.v8i1.3882",
+    "titles": [
+     {
+      "title": "Conciliación de Maternidad, Estudios y Vida Social en Jóvenes Madres Estudiantes de Enfermería"
+     },
+     {
+      "titleType": "TranslatedTitle",
+      "title": "Balancing Motherhood, Studies and Social Life in Young Mothers Studying Nursing"
+     }
+    ],
+    "publicationYear": 2026,
+    "types": {
+     "schemaOrg": "ScholarlyArticle",
+     "resourceTypeGeneral": "JournalArticle",
+     "citeproc": "article-journal",
+     "bibtex": "article",
+     "ris": "JOUR"
+    },
+    "url": "https://revistas.uaz.edu.mx/index.php/eic/article/view/3882"
+   }
+  }
+ ],
+ "meta": {
+  "total": 195,
+  "totalPages": 39,
+  "page": 1
+ }
+}

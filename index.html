@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Narrative CV Crosswalk</title>
+  <meta name="description" content="An open, versioned crosswalk between narrative CV sections (R4RI, CVA) and the evidence available in ORCID, OpenAIRE, OpenAlex and DataCite.">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  <header class="wrap">
+    <h1>Narrative CV Crosswalk</h1>
+    <p class="lead">Which parts of a narrative CV can open infrastructures document, and which only the researcher can tell? Enter an ORCID iD to see the evidence ORCID, OpenAlex, DataCite and OpenAIRE hold for each section.</p>
+    <nav class="links">
+      <a href="https://github.com/pablosancheznunez/narrative-cv-crosswalk">Source</a>
+      <a href="data/mappings.json">Crosswalk (JSON)</a>
+      <a href="schema/mappings.schema.json">Schema</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <form id="form" class="card">
+      <label>Framework
+        <select id="framework">
+          <option value="r4ri">Résumé for Researchers (R4RI)</option>
+          <option value="cva-aei">CVA, Agencia Estatal de Investigación</option>
+        </select>
+      </label>
+      <label>ORCID iD
+        <input id="orcid" placeholder="0000-0002-1825-0097" autocomplete="off" spellcheck="false" inputmode="text">
+      </label>
+      <button type="submit">Map evidence</button>
+      <p class="note">Requests go straight from your browser to the four public APIs. Nothing is stored or sent anywhere else.</p>
+    </form>
+
+    <p id="message" role="status" aria-live="polite"></p>
+
+    <section id="results" hidden>
+      <div class="caveat"><strong>Not found does not mean it does not exist.</strong> Infrastructures only hold what has been registered with the researcher's ORCID iD.</div>
+      <h2>Sources consulted</h2>
+      <ul id="sources" class="sources"></ul>
+      <div class="downloads">
+        <button type="button" id="dl-json">Download report (JSON)</button>
+        <button type="button" id="dl-csv">Download evidence (CSV)</button>
+      </div>
+      <div id="sections"></div>
+    </section>
+
+    <section id="explorer">
+      <h2>The crosswalk</h2>
+      <p class="note" id="version"></p>
+      <div class="table-scroll"><table id="mapping-table"></table></div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>Mappings are a draft pending expert review. Code MIT, data CC BY 4.0. Part of <a href="https://github.com/pablosancheznunez/research-tools-ops">research-tools-ops</a>.</p>
+  </footer>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

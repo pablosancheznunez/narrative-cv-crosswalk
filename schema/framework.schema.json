@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pablosancheznunez.github.io/narrative-cv-crosswalk/schema/framework.schema.json",
+  "title": "Narrative CV framework",
+  "type": "object",
+  "required": ["id", "name", "publisher", "reference", "status", "sections"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "name": { "type": "string" },
+    "publisher": { "type": "string" },
+    "reference": { "type": "string", "format": "uri" },
+    "status": { "enum": ["draft", "reviewed"] },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "no_automated_source"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "name": { "type": "string" },
+          "name_en": { "type": "string" },
+          "no_automated_source": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

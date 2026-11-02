@@ -1,0 +1,438 @@
+{
+ "schema": "ncvc-report/1",
+ "framework": "r4ri",
+ "mapping_version": "0.1.0",
+ "orcid": "0000-0002-1825-0097",
+ "generated_at": "2026-11-02T00:00:00Z",
+ "sources_consulted": [
+  {
+   "source": "orcid",
+   "ok": true,
+   "count": 10,
+   "error": null,
+   "retrieved_at": "2026-11-02T00:00:00Z"
+  },
+  {
+   "source": "openalex",
+   "ok": true,
+   "count": 5,
+   "error": null,
+   "retrieved_at": "2026-11-02T00:00:00Z"
+  },
+  {
+   "source": "datacite",
+   "ok": true,
+   "count": 5,
+   "error": null,
+   "retrieved_at": "2026-11-02T00:00:00Z"
+  },
+  {
+   "source": "openaire",
+   "ok": true,
+   "count": 1,
+   "error": null,
+   "retrieved_at": "2026-11-02T00:00:00Z"
+  }
+ ],
+ "sections": [
+  {
+   "id": "personal-details",
+   "name": "Personal details",
+   "status": "found",
+   "mappings": [
+    {
+     "id": "r4ri.personal-details.orcid.person",
+     "contribution_type": "identity",
+     "source": "orcid",
+     "evidence_type": "direct",
+     "coverage": "full",
+     "limitations": "Only what the researcher made public in ORCID.",
+     "source_available": true,
+     "count": 1,
+     "items": [
+      {
+       "source": "orcid",
+       "record": "person",
+       "type": null,
+       "title": "Josiah Carberry",
+       "year": null,
+       "url": "https://orcid.org/0000-0002-1825-0097"
+      }
+     ]
+    },
+    {
+     "id": "r4ri.personal-details.orcid.employments",
+     "contribution_type": "career",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Self-declared unless added by an institution; often incomplete.",
+     "source_available": true,
+     "count": 2,
+     "items": [
+      {
+       "source": "orcid",
+       "record": "employments",
+       "type": null,
+       "title": "Professor, Psychoceramics, Wesleyan University",
+       "year": 1930,
+       "url": null
+      },
+      {
+       "source": "orcid",
+       "record": "employments",
+       "type": null,
+       "title": "Professor, Psychoceramics, Brown University",
+       "year": 1929,
+       "url": null
+      }
+     ]
+    },
+    {
+     "id": "r4ri.personal-details.orcid.educations",
+     "contribution_type": "career",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Self-declared; often incomplete.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    }
+   ]
+  },
+  {
+   "id": "personal-statement",
+   "name": "Personal statement",
+   "status": "no_automated_source",
+   "mappings": []
+  },
+  {
+   "id": "knowledge",
+   "name": "Contributions to the generation of knowledge",
+   "status": "partial",
+   "mappings": [
+    {
+     "id": "r4ri.knowledge.openalex.works",
+     "contribution_type": "publication",
+     "source": "openalex",
+     "evidence_type": "direct",
+     "coverage": "partial",
+     "limitations": "Depends on correct author disambiguation; weaker coverage for humanities, books and non-English outputs.",
+     "source_available": true,
+     "count": 5,
+     "items": [
+      {
+       "source": "openalex",
+       "record": "works",
+       "type": "review",
+       "title": "‘Dignity therapy’, a promising intervention in palliative care: A comprehensive systematic literature review",
+       "year": 2016,
+       "url": "https://doi.org/10.1177/0269216316665562"
+      },
+      {
+       "source": "openalex",
+       "record": "works",
+       "type": "article",
+       "title": "Endothelial NO Synthase Genotype and Risk of Preeclampsia",
+       "year": 2004,
+       "url": "https://doi.org/10.1161/01.hyp.0000143483.66701.ec"
+      },
+      {
+       "source": "openalex",
+       "record": "works",
+       "type": "article",
+       "title": "ALTERNATIVE FOOD NETWORKS AND NEW PRODUCER-CONSUMER RELATIONS IN FRANCE AND IN BRAZIL",
+       "year": 2016,
+       "url": "https://doi.org/10.1590/1809-4422asoc121132v1922016"
+      },
+      {
+       "source": "openalex",
+       "record": "works",
+       "type": "article",
+       "title": "Manajemen dan Riset Sumber Daya Manusia",
+       "year": 2018,
+       "url": "https://openalex.org/W2901858332"
+      },
+      {
+       "source": "openalex",
+       "record": "works",
+       "type": "article",
+       "title": "Definisi Dan Teori Pendekatan, Strategi, Dan Metode Pembelajaran",
+       "year": 2023,
+       "url": "https://doi.org/10.21927/ijeeti.2023.2(1).20-31"
+      }
+     ]
+    },
+    {
+     "id": "r4ri.knowledge.orcid.works",
+     "contribution_type": "publication",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Complete only if the researcher keeps ORCID up to date.",
+     "source_available": true,
+     "count": 6,
+     "items": [
+      {
+       "source": "orcid",
+       "record": "works",
+       "type": "journal-article",
+       "title": "A Methodology for the Emulation of Architecture",
+       "year": 2012,
+       "url": "https://doi.org/10.5555/12345680"
+      },
+      {
+       "source": "orcid",
+       "record": "works",
+       "type": "journal-article",
+       "title": "The Memory Bus Considered Harmful",
+       "year": 2012,
+       "url": "https://doi.org/10.5555/666655554444"
+      },
+      {
+       "source": "orcid",
+       "record": "works",
+       "type": "journal-article",
+       "title": "The Impact of Interactive Epistemologies on Cryptography",
+       "year": 2011,
+       "url": "https://doi.org/10.5555/987654321"
+      },
+      {
+       "source": "orcid",
+       "record": "works",
+       "type": "journal-article",
+       "title": "Developing Thin Clients Using Amphibious Epistemologies",
+       "year": 2008,
+       "url": "https://doi.org/10.5555/12345679"
+      },
+      {
+       "source": "orcid",
+       "record": "works",
+       "type": "journal-article",
+       "title": "Toward a Unified Theory of High-Energy Metaphysics: Silly String Theory",
+       "year": 2008,
+       "url": "https://doi.org/10.5555/12345678"
+      },
+      {
+       "source": "orcid",
+       "record": "works",
+       "type": "journal-article",
+       "title": "Bulk and surface plasmons in artificially structured materials",
+       "year": 1987,
+       "url": "http://www.scopus.com/inward/record.url?eid=2-s2.0-0023398608&partnerID=MN8TOARS"
+      }
+     ]
+    },
+    {
+     "id": "r4ri.knowledge.datacite.datasets",
+     "contribution_type": "dataset",
+     "source": "datacite",
+     "evidence_type": "direct",
+     "coverage": "partial",
+     "limitations": "Only datasets with a DataCite DOI whose metadata carry the ORCID iD.",
+     "source_available": true,
+     "count": 1,
+     "items": [
+      {
+       "source": "datacite",
+       "record": "dois",
+       "type": "Dataset",
+       "title": "Opgraving - variant archeologische begeleiding leidingverleggingen Zernike-terrein, Groningen",
+       "year": 2020,
+       "url": "https://doi.org/10.17026/dans-xxt-v8cc"
+      }
+     ]
+    },
+    {
+     "id": "r4ri.knowledge.datacite.software",
+     "contribution_type": "software",
+     "source": "datacite",
+     "evidence_type": "direct",
+     "coverage": "partial",
+     "limitations": "Only software archived with a DataCite DOI (e.g. Zenodo) whose metadata carry the ORCID iD.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    },
+    {
+     "id": "r4ri.knowledge.openaire.products",
+     "contribution_type": "research-product",
+     "source": "openaire",
+     "evidence_type": "direct",
+     "coverage": "partial",
+     "limitations": "Only products where OpenAIRE links the author to the ORCID iD.",
+     "source_available": true,
+     "count": 1,
+     "items": [
+      {
+       "source": "openaire",
+       "record": "products",
+       "type": "publication",
+       "title": "Bulk and Surface Plasmons in Artificially Structured Materials",
+       "year": 1987,
+       "url": "https://doi.org/10.1109/tps.1987.4316723"
+      }
+     ]
+    },
+    {
+     "id": "r4ri.knowledge.orcid.fundings",
+     "contribution_type": "funding",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Self-declared unless pushed by a funder; role in the project is rarely stated.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    }
+   ]
+  },
+  {
+   "id": "individuals",
+   "name": "Contributions to the development of individuals",
+   "status": "not_found_in_sources",
+   "mappings": [
+    {
+     "id": "r4ri.individuals.orcid.supervised",
+     "contribution_type": "supervision",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Supervision and mentoring are rarely recorded in any infrastructure; the narrative is the main evidence.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    },
+    {
+     "id": "r4ri.individuals.orcid.teaching",
+     "contribution_type": "teaching",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Teaching materials only when registered by the researcher.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    }
+   ]
+  },
+  {
+   "id": "community",
+   "name": "Contributions to the wider research community",
+   "status": "partial",
+   "mappings": [
+    {
+     "id": "r4ri.community.orcid.peer-reviews",
+     "contribution_type": "peer-review",
+     "source": "orcid",
+     "evidence_type": "direct",
+     "coverage": "partial",
+     "limitations": "Only reviews deposited by publishers or services that report to ORCID.",
+     "source_available": true,
+     "count": 1,
+     "items": [
+      {
+       "source": "orcid",
+       "record": "peer-reviews",
+       "type": "reviewer",
+       "title": "The Psychoceramics Society",
+       "year": 2004,
+       "url": null
+      }
+     ]
+    },
+    {
+     "id": "r4ri.community.orcid.services",
+     "contribution_type": "service",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Self-declared; editorial and committee roles are seldom recorded.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    },
+    {
+     "id": "r4ri.community.orcid.memberships",
+     "contribution_type": "membership",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Self-declared.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    },
+    {
+     "id": "r4ri.community.orcid.invited-positions",
+     "contribution_type": "invited-position",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Self-declared.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    },
+    {
+     "id": "r4ri.community.orcid.distinctions",
+     "contribution_type": "distinction",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Self-declared.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    }
+   ]
+  },
+  {
+   "id": "society",
+   "name": "Contributions to broader society",
+   "status": "not_found_in_sources",
+   "mappings": [
+    {
+     "id": "r4ri.society.orcid.outreach",
+     "contribution_type": "outreach",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Public engagement and social impact are mostly undocumented in infrastructures.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    },
+    {
+     "id": "r4ri.society.orcid.policy",
+     "contribution_type": "policy",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Policy influence is rarely traceable to individual records.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    },
+    {
+     "id": "r4ri.society.orcid.innovation",
+     "contribution_type": "innovation",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Self-declared; patent offices are not queried.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    }
+   ]
+  },
+  {
+   "id": "additional",
+   "name": "Additional information",
+   "status": "no_automated_source",
+   "mappings": []
+  }
+ ]
+}
