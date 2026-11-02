@@ -36,6 +36,6 @@ jobs:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     uses: pablosancheznunez/research-tools-ops/.github/workflows/auto-release.yml@main
     with:
-      test: node --test tests/
+      test: node --test
     permissions:
       contents: write

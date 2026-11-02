@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://pablosancheznunez.github.io/narrative-cv-crosswalk/schema/framework.schema.json",
+  "$id": "https://pablosancheznunez.com/narrative-cv-crosswalk/schema/framework.schema.json",
   "title": "Narrative CV framework",
   "type": "object",
   "required": ["id", "name", "publisher", "reference", "status", "sections"],

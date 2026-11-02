@@ -2,7 +2,7 @@
 
 An open, versioned mapping between the sections of narrative CVs and the evidence that open research infrastructures hold about a researcher.
 
-**Use it in the browser:** <https://pablosancheznunez.github.io/narrative-cv-crosswalk/>. Enter an ORCID iD; the page queries ORCID, OpenAlex, DataCite and the OpenAIRE Graph directly from your browser and shows, section by section, what each source can document.
+**Use it in the browser:** <https://pablosancheznunez.com/narrative-cv-crosswalk/>. Enter an ORCID iD; the page queries ORCID, OpenAlex, DataCite and the OpenAIRE Graph directly from your browser and shows, section by section, what each source can document.
 
 Narrative CVs (such as the Royal Society's *Résumé for Researchers* or the Spanish *CVA* of the Agencia Estatal de Investigación) ask researchers to describe contributions that metrics miss. Some of those contributions leave traces in open infrastructures; many do not. The crosswalk makes that explicit, with the coverage and limitations of each source, so that evaluators know what was checked and what only the researcher can tell. **Not found does not mean it does not exist.**
 
@@ -19,7 +19,7 @@ Narrative CVs (such as the Royal Society's *Résumé for Researchers* or the Spa
 The JSON files are the product. Use them from any language without installing anything:
 
 ```r
-crosswalk <- jsonlite::fromJSON("https://pablosancheznunez.github.io/narrative-cv-crosswalk/data/mappings.json")
+crosswalk <- jsonlite::fromJSON("https://pablosancheznunez.com/narrative-cv-crosswalk/data/mappings.json")
 ```
 
 ## R package
@@ -56,7 +56,7 @@ Maintained with as little human time as possible by [research-tools-ops](https:/
 ## Tests
 
 ```bash
-node --test tests/              # engine, connectors, data integrity, regression
+node --test              # engine, connectors, data integrity, regression
 node --test tests/live/contract.js   # live APIs
 python tests/validate_schema.py      # needs: pip install jsonschema
 ```
