@@ -47,7 +47,7 @@ The R package and the JavaScript engine are tested against the same recorded res
 
 ## Status of the mappings
 
-Version 0.1.0 is a **draft pending expert review**. Contributions and corrections are welcome through issues. The crosswalk is designed as an interoperable resource that could contribute to initiatives such as ARION (coordinated by OpenAIRE); it is not an official part of them.
+Mapping version 0.2.0 has been checked against the official sources: the [AEI instructions for the CVA](https://www.uma.es/media/files/Instrucciones_para_rellenar_el_CVA_CNS2025.pdf) (2025 call: parts A.1 to A.3, B, and C.1 to C.4) and the Royal Society R4RI template (2019). It remains a **draft pending review by research assessment experts**. Contributions and corrections are welcome through issues. The crosswalk is designed as an interoperable resource that could contribute to initiatives such as ARION (coordinated by OpenAIRE); it is not an official part of them.
 
 ## Maintenance
 

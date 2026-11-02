@@ -1,7 +1,7 @@
 {
  "schema": "ncvc-report/1",
  "framework": "cva-aei",
- "mapping_version": "0.1.0",
+ "mapping_version": "0.2.0",
  "orcid": "0000-0002-1825-0097",
  "generated_at": "2026-11-02T00:00:00Z",
  "sources_consulted": [
@@ -37,7 +37,7 @@
  "sections": [
   {
    "id": "a-personal",
-   "name": "Parte A. Datos personales",
+   "name": "Parte A. Datos personales (código ORCID)",
    "status": "found",
    "mappings": [
     {
@@ -46,7 +46,7 @@
      "source": "orcid",
      "evidence_type": "direct",
      "coverage": "full",
-     "limitations": "Only what the researcher made public in ORCID.",
+     "limitations": "The ORCID iD is mandatory in the CVA; only public ORCID data are read.",
      "source_available": true,
      "count": 1,
      "items": [
@@ -59,14 +59,21 @@
        "url": "https://orcid.org/0000-0002-1825-0097"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "a1-current-position",
+   "name": "A.1 Situación profesional actual",
+   "status": "partial",
+   "mappings": [
     {
-     "id": "cva-aei.a-personal.orcid.employments",
+     "id": "cva-aei.a1-current-position.orcid.employments",
      "contribution_type": "career",
      "source": "orcid",
      "evidence_type": "self-declared",
      "coverage": "partial",
-     "limitations": "Current position may be missing or out of date.",
+     "limitations": "Current and past positions are listed together. Research keywords are not read.",
      "source_available": true,
      "count": 2,
      "items": [
@@ -91,6 +98,70 @@
    ]
   },
   {
+   "id": "a2-previous-positions",
+   "name": "A.2 Situación profesional anterior",
+   "status": "partial",
+   "mappings": [
+    {
+     "id": "cva-aei.a2-previous-positions.orcid.employments",
+     "contribution_type": "career",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Career breaks (art. 13.2.b of the call) are never recorded in infrastructures and must be declared by the researcher.",
+     "source_available": true,
+     "count": 2,
+     "items": [
+      {
+       "source": "orcid",
+       "record": "employments",
+       "type": null,
+       "title": "Professor, Psychoceramics, Wesleyan University",
+       "year": 1930,
+       "url": null
+      },
+      {
+       "source": "orcid",
+       "record": "employments",
+       "type": null,
+       "title": "Professor, Psychoceramics, Brown University",
+       "year": 1929,
+       "url": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a3-education",
+   "name": "A.3 Formación académica",
+   "status": "not_found_in_sources",
+   "mappings": [
+    {
+     "id": "cva-aei.a3-education.orcid.educations",
+     "contribution_type": "education",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Self-declared; often incomplete.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    },
+    {
+     "id": "cva-aei.a3-education.orcid.qualifications",
+     "contribution_type": "qualification",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Self-declared; often incomplete.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    }
+   ]
+  },
+  {
    "id": "b-summary",
    "name": "Parte B. Resumen libre del currículum",
    "status": "no_automated_source",
@@ -98,7 +169,7 @@
   },
   {
    "id": "c1-publications",
-   "name": "C.1 Publicaciones",
+   "name": "C.1 Publicaciones más importantes en libros y revistas con peer review y en conferencias",
    "status": "partial",
    "mappings": [
     {
@@ -107,7 +178,7 @@
      "source": "openalex",
      "evidence_type": "direct",
      "coverage": "partial",
-     "limitations": "Depends on author disambiguation; weaker for Spanish-language and humanities outputs.",
+     "limitations": "Depends on author disambiguation; weaker for Spanish-language and humanities outputs. Peer review is not verified: venues are not checked against peer-review status.",
      "source_available": true,
      "count": 5,
      "items": [
@@ -159,7 +230,7 @@
      "source": "orcid",
      "evidence_type": "self-declared",
      "coverage": "partial",
-     "limitations": "Complete only if the researcher keeps ORCID up to date.",
+     "limitations": "Complete only if the researcher keeps ORCID up to date. Peer review is not verified: venues are not checked against peer-review status.",
      "source_available": true,
      "count": 6,
      "items": [
@@ -219,7 +290,7 @@
      "source": "openaire",
      "evidence_type": "direct",
      "coverage": "partial",
-     "limitations": "Only products linked to the ORCID iD in OpenAIRE.",
+     "limitations": "Only products linked to the ORCID iD in OpenAIRE. Peer review is not verified: venues are not checked against peer-review status.",
      "source_available": true,
      "count": 1,
      "items": [
@@ -246,7 +317,7 @@
      "source": "orcid",
      "evidence_type": "self-declared",
      "coverage": "partial",
-     "limitations": "Conference contributions without a DOI are seldom recorded anywhere else.",
+     "limitations": "The mode of participation (invited talk, oral, poster) is rarely recorded; contributions without a DOI seldom appear elsewhere.",
      "source_available": true,
      "count": 0,
      "items": []
@@ -255,16 +326,16 @@
   },
   {
    "id": "c3-projects",
-   "name": "C.3 Proyectos y contratos",
+   "name": "C.3 Proyectos o líneas de investigación en los que ha participado",
    "status": "not_found_in_sources",
    "mappings": [
     {
      "id": "cva-aei.c3-projects.orcid.fundings",
-     "contribution_type": "funding",
+     "contribution_type": "project",
      "source": "orcid",
      "evidence_type": "self-declared",
      "coverage": "partial",
-     "limitations": "Role (PI or team member) and contracts with companies are rarely recorded.",
+     "limitations": "The CVA asks for reference, funder, PI, amount and type of participation; ORCID rarely records the role or the amount.",
      "source_available": true,
      "count": 0,
      "items": []
@@ -273,16 +344,27 @@
   },
   {
    "id": "c4-transfer",
-   "name": "C.4 Actividades de transferencia",
+   "name": "C.4 Participación en actividades de transferencia de tecnología/conocimiento y explotación de resultados",
    "status": "not_found_in_sources",
    "mappings": [
+    {
+     "id": "cva-aei.c4-transfer.orcid.contracts",
+     "contribution_type": "contract",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Contracts with companies are rarely recorded in ORCID.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    },
     {
      "id": "cva-aei.c4-transfer.orcid.works",
      "contribution_type": "innovation",
      "source": "orcid",
      "evidence_type": "self-declared",
      "coverage": "partial",
-     "limitations": "Patent offices and technology transfer offices are not queried.",
+     "limitations": "Patent offices and technology transfer offices are not queried; exploitation status is not recorded.",
      "source_available": true,
      "count": 0,
      "items": []
@@ -293,7 +375,7 @@
      "source": "datacite",
      "evidence_type": "direct",
      "coverage": "partial",
-     "limitations": "Only software archived with a DataCite DOI.",
+     "limitations": "Only software archived with a DataCite DOI; counted here as a transfer result, which the CVA does not list explicitly.",
      "source_available": true,
      "count": 0,
      "items": []

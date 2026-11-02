@@ -1,7 +1,7 @@
 {
  "schema": "ncvc-report/1",
  "framework": "r4ri",
- "mapping_version": "0.1.0",
+ "mapping_version": "0.2.0",
  "orcid": "0000-0002-1825-0097",
  "generated_at": "2026-11-02T00:00:00Z",
  "sources_consulted": [
@@ -91,6 +91,17 @@
     {
      "id": "r4ri.personal-details.orcid.educations",
      "contribution_type": "career",
+     "source": "orcid",
+     "evidence_type": "self-declared",
+     "coverage": "partial",
+     "limitations": "Self-declared; often incomplete.",
+     "source_available": true,
+     "count": 0,
+     "items": []
+    },
+    {
+     "id": "r4ri.personal-details.orcid.qualifications",
+     "contribution_type": "qualification",
      "source": "orcid",
      "evidence_type": "self-declared",
      "coverage": "partial",
