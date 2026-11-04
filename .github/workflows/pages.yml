@@ -34,7 +34,7 @@ jobs:
           extra-packages: any::pkgdown, local::.
           needs: website
       - name: Build the package site
-        run: Rscript -e 'pkgdown::build_site("r", override = list(destination = "../_site/r"), new_process = FALSE, install = FALSE)'
+        run: Rscript -e 'pkgdown::build_site("r", override = list(destination = "../_site/r", repo = list(url = list(source = "https://github.com/pablosancheznunez/narrative-cv-crosswalk/blob/main/r/"))), new_process = FALSE, install = FALSE)'
       - name: Add the web tool
         run: |
           cp -r index.html _site/
